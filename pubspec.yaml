@@ -1,10 +1,10 @@
 name: horusvision
-description: "A new Flutter package project."
+description: "The new era for show views(cinema seat plan)"
 version: 0.0.1
 package:
     git: https://github.com/dherediat97/HorusVision
     ref: main
-homepage:
+homepage: https://github.com/dherediat97/HorusVision
 
 environment:
   sdk: '>=3.4.3 <4.0.0'
