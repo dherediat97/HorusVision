@@ -1,7 +1,9 @@
 name: horusvision
 description: "A new Flutter package project."
 version: 0.0.1
-
+package:
+    git: https://github.com/dherediat97/HorusVision
+    ref: main
 homepage:
 
 environment:
