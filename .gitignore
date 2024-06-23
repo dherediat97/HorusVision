@@ -1,6 +1,8 @@
 .vscode/launch.json
 example/pubspec.lock
 pubspec.lock
-.idea/
-.dart_tool/
-.dart_tool/package_config.json
+.idea/*
+.dart_tool/*
+.vscode/launch.json
+pubspec.lock
+.metadata
