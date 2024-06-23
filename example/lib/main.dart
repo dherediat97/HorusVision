@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:horusvision/horus_view.dart';
+import 'package:horusvision/horusvision.dart';
 
 void main() {
   runApp(const MyApp());

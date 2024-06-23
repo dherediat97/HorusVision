@@ -1,6 +1,6 @@
 name: horusvision
 description: "The new era for show views, with that package you can show to your users any place of concert or airplane plane"
-version: 0.0.1-alpha01
+version: 0.0.2
 package:
     git: https://github.com/dherediat97/HorusVision
     ref: main
