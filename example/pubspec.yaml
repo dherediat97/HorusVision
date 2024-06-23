@@ -1,4 +1,4 @@
-name: example
+name: horus_example_app
 description: "A new Flutter project."
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
@@ -9,7 +9,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-  horus_vision:
+  horusvision:
     path:
       ../
 

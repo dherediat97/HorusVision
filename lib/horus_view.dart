@@ -1,4 +1,4 @@
-library horus_vision;
+library horusvision;
 
 import 'package:flutter/material.dart';
 

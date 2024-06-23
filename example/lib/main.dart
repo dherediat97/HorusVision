@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:horus_vision/horus_view.dart';
+import 'package:horusvision/horus_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Example app Horus Vision',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSwatch(
