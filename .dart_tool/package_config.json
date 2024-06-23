@@ -158,13 +158,13 @@
       "languageVersion": "3.3"
     },
     {
-      "name": "horusvision",
+      "name": "horus_vision",
       "rootUri": "../",
       "packageUri": "lib/",
       "languageVersion": "3.4"
     }
   ],
-  "generated": "2024-06-21T21:24:45.294832Z",
+  "generated": "2024-06-23T17:15:37.001229Z",
   "generator": "pub",
   "generatorVersion": "3.4.3",
   "flutterRoot": "file:///C:/src/flutter",
