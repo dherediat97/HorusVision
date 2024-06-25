@@ -1,9 +1,7 @@
-.vscode/launch.json
-example/pubspec.lock
 pubspec.lock
-.idea/*
-.dart_tool/*
-.vscode/launch.json
+.idea
+.dart_tool
+.vscode
 .metadata
 *.freezed.dart
 *.g.dart

@@ -67,12 +67,12 @@ dev_dependencies:
   #
   # For test all of bloc lifecycle
   # https://pub.dev/packages/bloc_test
-  bloc_test: ^9.1.0
+  bloc_test: ^9.1.7
 
 flutter:
+  generate: true
   assets: 
     - assets/mock/
-  generate: true
 
 
 flutter_intl:

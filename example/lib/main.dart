@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:horusvision/app/di/di.dart';
 import 'package:horusvision/presentation/features/horusvision.dart';
 
 void main() {
+  initDi();
   runApp(const MyApp());
 }
 
@@ -44,8 +46,8 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         child: TextButton(
           onPressed: () {
-            Navigator.push(context,
-                MaterialPageRoute(builder: (_) => const HorusWidget()));
+            Navigator.push(
+                context, MaterialPageRoute(builder: (_) => HorusView()));
           },
           style: const ButtonStyle(
               backgroundColor: WidgetStatePropertyAll(Colors.black)),
