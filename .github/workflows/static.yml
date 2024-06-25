@@ -31,7 +31,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: subosito/flutter-action@v2
-      - run: flutter build web --release --base-href /HorusVision/
+      - run: flutter build web --release --base-href /HorusVision/ -t example/lib/main.dart
       - run: git config user.name dherediat97
       - run: git config user.email dherediat97@gmail.com
       - run: git --work-tree build/web add --all
