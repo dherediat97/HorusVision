@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:horusvision/horusvision.dart';
+import 'package:horusvision/presentation/features/horusvision.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,10 +15,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSwatch(
-          primarySwatch: Colors.grey,
-          accentColor: Colors.orange,
-          backgroundColor: Colors.white,
-          brightness: Brightness.dark,
+          primarySwatch: Colors.red,
+          brightness: Brightness.light,
         ),
         useMaterial3: true,
       ),

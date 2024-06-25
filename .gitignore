@@ -4,5 +4,7 @@ pubspec.lock
 .idea/*
 .dart_tool/*
 .vscode/launch.json
-pubspec.lock
 .metadata
+*.freezed.dart
+*.g.dart
+build/
