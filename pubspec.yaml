@@ -13,11 +13,68 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+  go_router: ^6.0.1
+
+  # Bussines Logic Component
+  #
+  # Controller class to management the bloc state in the package
+  # https://pub.dev/packages/flutter_bloc
+  flutter_bloc: ^8.1.6
+
+  # Freezed - Model Smart Generation
+  #
+  # Utility to generate smart data-model classes in the package
+  # https://pub.dev/packages/freezed
+  freezed: ^2.5.2
+
+  # Freezed - Model Smart Generation
+  #
+  # Annotations of Freezed package
+  # https://pub.dev/packages/freezed_annotation
+  freezed_annotation: ^2.4.1
+
+  # Json - Json Model Smart Generation
+  #
+  # Annotations to help freezed generate remote data-models classes
+  # https://pub.dev/packages/json_annotation
+  json_annotation: ^4.9.0
+
+  dio: ^5.0.0
+
+  retrofit: ^4.1.0
+  
+  intl: ^0.19.0
+  get_it: ^7.2.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^3.0.0
+  build_runner: ^2.4.11
+  json_serializable: ^6.8.0
+  retrofit_generator: "^8.1.0"
 
+  # Testing
+  #
+  # A mock framework inspired by Mockito
+  # https://pub.dev/packages/mockito
+  mockito: ^5.3.2
+
+  # Utility Test library for Bloc 
+  #
+  # For test all of bloc lifecycle
+  # https://pub.dev/packages/bloc_test
+  bloc_test: ^9.1.7
 
 flutter:
+  generate: true
+  assets: 
+    - assets/mock/
+
+
+flutter_intl:
+  enabled: true
+  class_name: AppLocalizations
