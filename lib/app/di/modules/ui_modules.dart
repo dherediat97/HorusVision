@@ -4,10 +4,12 @@ final uiModulesDi = GetIt.instance;
 
 void _uiModulesInit() {
   uiModulesDi.registerFactory(
-    () => const HorusView(),
+    () => HorusViewBloc(
+      repositoryContract: uiModulesDi(),
+    ),
   );
 
   uiModulesDi.registerFactory(
-    () => const HorusToolbox(),
+    () => HorusToolboxBloc(),
   );
 }

@@ -10,6 +10,7 @@ void _apiModulesInit() {
       ...EnvironmentConfig.environment == 'dev'
           ? [CurlLoggerDioInterceptor(printOnSuccess: true)]
           : [],
+      ...EnvironmentConfig.environment == 'mock' ? [MockInterceptor()] : [],
     ]);
 
     return dioClient.getDio();
@@ -18,7 +19,7 @@ void _apiModulesInit() {
   apiModulesDi.registerLazySingleton(
     () => HorusApi(
       apiModulesDi(),
-      baseUrl: '',
+      baseUrl: AppUrls.baseUrl,
     ),
   );
 }

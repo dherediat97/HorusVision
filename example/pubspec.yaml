@@ -9,6 +9,12 @@ dependencies:
   flutter:
     sdk: flutter
 
+  go_router: ^6.0.1
+  # Bussines Logic Component
+  #
+  # Controller class to management the bloc state in the package
+  # https://pub.dev/packages/flutter_bloc
+  flutter_bloc: ^8.1.6
   horusvision:
     path:
       ../
@@ -21,3 +27,5 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  assets: 
+    - assets/

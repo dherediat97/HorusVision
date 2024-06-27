@@ -7,7 +7,10 @@
         {
             "name": "horus_vision",
             "request": "launch",
-            "type": "dart"
+            "type": "dart", 
+            "args": [
+                "--dart-define=ENVIRONMENT=mock",
+            ],
         },
         {
             "name": "horus_vision (profile mode)",
@@ -25,7 +28,10 @@
             "name": "example",
             "cwd": "example",
             "request": "launch",
-            "type": "dart"
+            "type": "dart", 
+            "args": [
+                "--dart-define=ENVIRONMENT=mock",
+            ],
         },
         {
             "name": "example (profile mode)",

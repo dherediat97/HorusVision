@@ -8,6 +8,6 @@ part 'horus_api.g.dart';
 abstract class HorusApi {
   factory HorusApi(Dio dio, {String? baseUrl}) = _HorusApi;
 
-  @GET('/api/horusEntity')
+  @GET('/getdata')
   Future<HorusRemoteEntity> getData();
 }
