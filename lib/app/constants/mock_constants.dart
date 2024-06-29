@@ -1,6 +1,6 @@
 class MocksPaths {
   static String error = 'mockError';
-  static String mockPathBaseAssets = 'assets/';
+  static String mockPathBaseAssets = 'example/assets';
 
   MocksPaths._();
 }

@@ -1,28 +1,28 @@
 {
     "name": "El castillo Ambulante Versión 2024",
     "paid_seats": [{
-        "seatId": "10C",
+        "seatId": "C10",
         "price": {
             "value":10,
             "currency":"EUR"
         }
     },
     {
-        "seatId": "5C",
+        "seatId": "B5",
         "price": {
             "value":12,
             "currency":"EUR"
         }
     },
     {
-        "seatId": "3B",
+        "seatId": "B3",
         "price": {
             "value":10,
             "currency":"EUR"
         }
     },
     {
-        "seatId": "2A",
+        "seatId": "A2",
         "price": {
             "value":8,
             "currency":"EUR"

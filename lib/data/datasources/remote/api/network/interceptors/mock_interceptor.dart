@@ -15,7 +15,7 @@ class MockInterceptor extends InterceptorsWrapper {
     try {
       // Loads the JSON data from assets
       final jsonData = await getJsonFromAssets(
-        '${options.path}.json',
+        '${MocksPaths.mockPathBaseAssets}${options.path}.json',
       );
       // Resolves the request with the loaded JSON data
       handler.resolve(Response(requestOptions: options, data: jsonData));

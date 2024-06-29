@@ -5,13 +5,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:go_router/go_router.dart';
 import 'package:horusvision/app/constants/app_constants.dart';
-import 'package:horusvision/app/di/di.dart' as app_di;
 import 'package:horusvision/app/di/top_bloc_providers.dart';
 import 'package:horusvision/app/routes/app_routes.dart';
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await app_di.initDi();
   runApp(const HorusVision());
 }
 

@@ -11,7 +11,7 @@ class HorusToolbox extends StatelessWidget {
       builder: (context, state) {
         return Row(
           mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             IconButton(
               icon: const Icon(Icons.zoom_in),
