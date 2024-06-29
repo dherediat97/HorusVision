@@ -38,7 +38,8 @@ jobs:
           flutter build web --release -t lib/main.dart
           git config user.name dherediat97
           git config user.email dherediat97@gmail.com
-          git --work-tree example/build/web add --all
-          git commit -m "Automatic deployment by github-actions"
-          git push origin HEAD:prod --force
+      - uses: bluefireteam/flutter-gh-pages@v7
+        with:
+          baseHref: /HorusVision/
+          customArgs: --dart-define="ENVIRONMENT=mock"
 
