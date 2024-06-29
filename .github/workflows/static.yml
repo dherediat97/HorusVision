@@ -33,13 +33,9 @@ jobs:
       - uses: subosito/flutter-action@v2
       - run: dart run build_runner build --delete-conflicting-outputs    
       - name: Release example demo to the gh-pages web
-        run: |
-          cd example
-          flutter build web --release -t lib/main.dart
-          git config user.name dherediat97
-          git config user.email dherediat97@gmail.com
       - uses: bluefireteam/flutter-gh-pages@v7
         with:
+          workingDir: example
           baseHref: /HorusVision/
           customArgs: --dart-define="ENVIRONMENT=mock"
 
