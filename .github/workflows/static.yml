@@ -34,7 +34,7 @@ jobs:
       - name: Move example folder
         run: |
           cd example
-      - run: flutter build web --release --base-href /HorusVision/ -t lib/main.dart
+      - run: flutter build web --release --base-href /HorusVision/ -t example/lib/main.dart
       - run: git config user.name dherediat97
       - run: git config user.email dherediat97@gmail.com
       - run: git --work-tree build/web add --all
