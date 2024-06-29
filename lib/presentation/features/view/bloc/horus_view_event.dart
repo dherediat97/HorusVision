@@ -1,6 +1,8 @@
-part of 'horus_view_bloc.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
+
+part 'horus_view_event.freezed.dart';
 
 @freezed
 class HorusViewEvent with _$HorusViewEvent {
-  const factory HorusViewEvent.started() = _Started;
+  const factory HorusViewEvent.getHorusData() = _GetHorusData;
 }

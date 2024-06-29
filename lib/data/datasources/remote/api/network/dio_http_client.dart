@@ -17,8 +17,10 @@ class DioClient {
 
   void addInterceptors(List<Interceptor> interceptors) {
     _dio
-      ..options.connectTimeout = _defaultConnectTimeout as Duration?
-      ..options.receiveTimeout = _defaultReceiveTimeout as Duration?
+      ..options.connectTimeout =
+          const Duration(milliseconds: _defaultConnectTimeout)
+      ..options.receiveTimeout =
+          const Duration(milliseconds: _defaultReceiveTimeout)
       ..httpClientAdapter
       ..options.headers = {'Content-Type': 'application/json'};
     if (interceptors.isNotEmpty) {
@@ -36,7 +38,6 @@ class DioClient {
     }
   }
 
-  /// Get Dio instance
   Dio getDio() {
     return _dio;
   }
