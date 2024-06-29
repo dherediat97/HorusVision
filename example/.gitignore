@@ -4,3 +4,8 @@
 build/*
 pubspec.lock
 .metadata
+android/
+ios/
+linux/
+macos/
+windows/
