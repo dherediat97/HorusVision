@@ -35,6 +35,7 @@ jobs:
       - name: Release example demo to the gh-pages web
       - uses: bluefireteam/flutter-gh-pages@v7
         with:
+          targetBranch: prod
           workingDir: example
           baseHref: /HorusVision/
           customArgs: --dart-define="ENVIRONMENT=mock"
