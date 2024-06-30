@@ -7,6 +7,7 @@ import 'package:horusvision/presentation/features/view/bloc/horus_view_bloc.dart
 import 'package:horusvision/presentation/features/view/bloc/horus_view_state.dart';
 import 'package:horusvision/presentation/features/view/constants/horus_constants.dart';
 import 'package:horusvision/presentation/features/view/widgets/seat_view.dart';
+import 'package:lottie/lottie.dart';
 
 class HorusView extends StatelessWidget {
   const HorusView({super.key});
@@ -22,12 +23,6 @@ class HorusView extends StatelessWidget {
               ? Column(
                   children: [
                     if (kIsWeb) ...[const HorusToolbox()],
-                    // Text(
-                    //   '${horusData.name} en ${horusData.site}',
-                    //   style: const TextStyle(
-                    //     fontSize: 20,
-                    //   ),
-                    // ),
                     SizedBox(
                       width: MediaQuery.of(context).size.width,
                       height: MediaQuery.of(context).size.height * 0.80,
@@ -51,15 +46,13 @@ class HorusView extends StatelessWidget {
                     ),
                   ],
                 )
-              : Container();
+              : Center(child: Lottie.asset('animations/loading.json'));
         },
       ),
     );
   }
 
   String getLetter(int index) {
-    double value = (index / 10);
-
-    return '$value${HorusConstants.arrayLetters[value.toInt()]}';
+    return '${HorusConstants.arrayLetters[index ~/ 10]}$index';
   }
 }

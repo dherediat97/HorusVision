@@ -30,9 +30,7 @@ class _HorusVisionState extends State<HorusVision> {
     return TopBlocProviders(
       child: MaterialApp.router(
         debugShowCheckedModeBanner: false,
-        routeInformationProvider: _router.routeInformationProvider,
-        routeInformationParser: _router.routeInformationParser,
-        routerDelegate: _router.routerDelegate,
+        routerConfig: _router,
         title: AppConstants.appName,
         localizationsDelegates: const [
           GlobalMaterialLocalizations.delegate,
