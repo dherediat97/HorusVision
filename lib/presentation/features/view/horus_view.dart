@@ -23,24 +23,26 @@ class HorusView extends StatelessWidget {
               ? Column(
                   children: [
                     if (kIsWeb) ...[const HorusToolbox()],
-                    SizedBox(
-                      width: MediaQuery.of(context).size.width,
-                      height: MediaQuery.of(context).size.height * 0.80,
-                      child: GridView.count(
-                        crossAxisCount: 10,
-                        crossAxisSpacing: 10,
-                        children: List.generate(
-                          horusData.maxCapacity,
-                          (index) {
-                            if (HorusConstants.emptySpaceCinema
-                                .contains(index)) {
-                              return Container();
-                            }
-                            return SeatViewWidget(
-                              index: getLetter(index),
-                              paidSeats: horusData.paidSeats ?? [],
-                            );
-                          },
+                    SingleChildScrollView(
+                      child: SizedBox(
+                        width: MediaQuery.of(context).size.width,
+                        height: MediaQuery.of(context).size.height * 0.80,
+                        child: GridView.count(
+                          crossAxisCount: 10,
+                          crossAxisSpacing: 10,
+                          children: List.generate(
+                            horusData.maxCapacity,
+                            (index) {
+                              if (HorusConstants.emptySpaceCinema
+                                  .contains(index)) {
+                                return Container();
+                              }
+                              return SeatViewWidget(
+                                index: getLetter(index),
+                                paidSeats: horusData.paidSeats ?? [],
+                              );
+                            },
+                          ),
                         ),
                       ),
                     ),

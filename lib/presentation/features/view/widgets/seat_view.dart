@@ -20,6 +20,8 @@ class SeatViewWidget extends StatelessWidget {
         child: Center(
           child: Text(
             index.substring(0, index.length),
+            style: TextStyle(
+                fontSize: MediaQuery.of(context).textScaler.scale(10)),
           ),
         ));
   }
