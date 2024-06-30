@@ -48,8 +48,6 @@ class HorusConstants {
     225,
     234,
     235,
-    244,
-    245,
   ];
 
   static const arrayLetters = [

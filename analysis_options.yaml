@@ -9,6 +9,7 @@ analyzer:
   plugins:
     - dart_code_metrics
   exclude:
+    - "lib/app/l10n/localizations/*.dart"
     - "**/*.g.dart"
     - "**/*.freezed.dart"
   errors:
