@@ -1,8 +1,0 @@
-pubspec.lock
-.idea
-.dart_tool
-.vscode
-.metadata
-*.freezed.dart
-*.g.dart
-build/
