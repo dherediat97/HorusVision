@@ -22,14 +22,17 @@ class HorusViewBloc extends Bloc<HorusViewEvent, HorusViewState> {
     emit(state.copyWith(uiState: const UiState.loading()));
 
     final horusData = await _repository.getData();
+
     horusData.when(
       failure: (errorMessage) {
         emit(
-          state.copyWith(uiState: const UiState.error(), horusEntity: null),
+          state.copyWith(uiState: UiState.error(errorMessage)),
         );
       },
-      success: (value) => emit(
-          state.copyWith(uiState: const UiState.success(), horusEntity: value)),
+      success: (value) => emit(state.copyWith(
+        uiState: const UiState.success(),
+        horusEntity: value,
+      )),
     );
   }
 }

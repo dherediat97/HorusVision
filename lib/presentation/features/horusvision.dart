@@ -7,6 +7,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get_it/get_it.dart';
 import 'package:go_router/go_router.dart';
 import 'package:horusvision/app/constants/app_constants.dart';
+import 'package:horusvision/app/routes/app_paths.dart';
 import 'package:horusvision/app/routes/app_routes.dart';
 import 'package:horusvision/presentation/features/toolbox/bloc/horus_toolbox_bloc.dart';
 import 'package:horusvision/presentation/features/view/bloc/horus_view_bloc.dart';
@@ -14,6 +15,7 @@ import 'package:horusvision/presentation/features/view/bloc/horus_view_bloc.dart
 GetIt getIt = GetIt.instance;
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const HorusVision());
 }
 
@@ -27,8 +29,8 @@ class HorusVision extends StatefulWidget {
 class _HorusVisionState extends State<HorusVision> {
   final GoRouter _router = GoRouter(
     debugLogDiagnostics: kDebugMode,
+    initialLocation: AppRoutePaths.startRoute,
     routes: appRoutes,
-    initialLocation: '/',
   );
 
   @override

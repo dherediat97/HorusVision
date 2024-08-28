@@ -8,7 +8,6 @@ import 'package:horusvision/presentation/features/view/bloc/horus_view_event.dar
 import 'package:horusvision/presentation/features/view/bloc/horus_view_state.dart';
 import 'package:horusvision/presentation/features/view/constants/horus_constants.dart';
 import 'package:horusvision/presentation/features/view/widgets/seat_view.dart';
-import 'package:lottie/lottie.dart';
 
 class HorusView extends StatefulWidget {
   const HorusView({super.key});
@@ -31,36 +30,33 @@ class _HorusViewState extends State<HorusView> {
         builder: (context, state) {
           HorusEntity? horusData = state.horusEntity;
 
-          return horusData != null
-              ? Column(
-                  children: [
-                    if (kIsWeb) ...[const HorusToolbox()],
-                    SingleChildScrollView(
-                      child: SizedBox(
-                        width: MediaQuery.of(context).size.width,
-                        height: MediaQuery.of(context).size.height * 0.80,
-                        child: GridView.count(
-                          crossAxisCount: 10,
-                          crossAxisSpacing: 10,
-                          children: List.generate(
-                            horusData.maxCapacity,
-                            (index) {
-                              if (HorusConstants.emptySpaceCinema
-                                  .contains(index)) {
-                                return Container();
-                              }
-                              return SeatViewWidget(
-                                index: getLetter(index),
-                                paidSeats: horusData.paidSeats ?? [],
-                              );
-                            },
-                          ),
-                        ),
-                      ),
+          return Column(
+            children: [
+              if (kIsWeb) ...[const HorusToolbox()],
+              SingleChildScrollView(
+                child: SizedBox(
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height * 0.80,
+                  child: GridView.count(
+                    crossAxisCount: 10,
+                    crossAxisSpacing: 10,
+                    children: List.generate(
+                      horusData!.maxCapacity,
+                      (index) {
+                        if (HorusConstants.emptySpaceCinema.contains(index)) {
+                          return Container();
+                        }
+                        return SeatViewWidget(
+                          index: getLetter(index),
+                          paidSeats: horusData.paidSeats ?? [],
+                        );
+                      },
                     ),
-                  ],
-                )
-              : Center(child: Lottie.asset('animations/loading.json'));
+                  ),
+                ),
+              ),
+            ],
+          );
         },
       ),
     );
