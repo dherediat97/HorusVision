@@ -19,3 +19,6 @@
 
 ## 0.1.0
 - Refactor and remove top_bloc_providers
+
+## 0.1.1
+- Add freezed files in the library
