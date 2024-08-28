@@ -4,13 +4,25 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:horusvision/domain/models/horus_entity.dart';
 import 'package:horusvision/presentation/features/toolbox/horus_toolbox.dart';
 import 'package:horusvision/presentation/features/view/bloc/horus_view_bloc.dart';
+import 'package:horusvision/presentation/features/view/bloc/horus_view_event.dart';
 import 'package:horusvision/presentation/features/view/bloc/horus_view_state.dart';
 import 'package:horusvision/presentation/features/view/constants/horus_constants.dart';
 import 'package:horusvision/presentation/features/view/widgets/seat_view.dart';
 import 'package:lottie/lottie.dart';
 
-class HorusView extends StatelessWidget {
+class HorusView extends StatefulWidget {
   const HorusView({super.key});
+
+  @override
+  State<HorusView> createState() => _HorusViewState();
+}
+
+class _HorusViewState extends State<HorusView> {
+  @override
+  void initState() {
+    context.read<HorusViewBloc>().add(const HorusViewEvent.getHorusData());
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {

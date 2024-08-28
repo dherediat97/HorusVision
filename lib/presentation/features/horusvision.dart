@@ -2,11 +2,16 @@ library horusvision;
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:get_it/get_it.dart';
 import 'package:go_router/go_router.dart';
 import 'package:horusvision/app/constants/app_constants.dart';
-import 'package:horusvision/app/di/top_bloc_providers.dart';
 import 'package:horusvision/app/routes/app_routes.dart';
+import 'package:horusvision/presentation/features/toolbox/bloc/horus_toolbox_bloc.dart';
+import 'package:horusvision/presentation/features/view/bloc/horus_view_bloc.dart';
+
+GetIt getIt = GetIt.instance;
 
 void main() async {
   runApp(const HorusVision());
@@ -23,11 +28,16 @@ class _HorusVisionState extends State<HorusVision> {
   final GoRouter _router = GoRouter(
     debugLogDiagnostics: kDebugMode,
     routes: appRoutes,
+    initialLocation: '/',
   );
 
   @override
   Widget build(BuildContext context) {
-    return TopBlocProviders(
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (context) => getIt<HorusViewBloc>()),
+        BlocProvider(create: (context) => getIt<HorusToolboxBloc>()),
+      ],
       child: MaterialApp.router(
         debugShowCheckedModeBanner: false,
         routerConfig: _router,
