@@ -14,15 +14,17 @@ class SeatViewWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card.filled(
-        color: paidSeats.map((e) => e.seatId).contains(index)
-            ? Colors.red
-            : Colors.white,
-        child: Center(
-          child: Text(
-            index.substring(0, index.length),
-            style: TextStyle(
-                fontSize: MediaQuery.of(context).textScaler.scale(10)),
+      color: paidSeats.map((e) => e.seatId).contains(index)
+          ? Colors.red
+          : Colors.white,
+      child: Center(
+        child: Text(
+          index.substring(0, index.length),
+          style: TextStyle(
+            fontSize: MediaQuery.of(context).textScaler.scale(10),
           ),
-        ));
+        ),
+      ),
+    );
   }
 }

@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:horusvision/app/types/errors/network_error.dart';
 import 'package:horusvision/app/types/repository_error.dart';
 import 'package:horusvision/app/types/result.dart';
