@@ -22,6 +22,8 @@ doc/api/
 *.js_
 *.js.deps
 *.js.map
+*.freezed.dart
+*.g.dart
 
 .flutter-plugins
 .flutter-plugins-dependencies

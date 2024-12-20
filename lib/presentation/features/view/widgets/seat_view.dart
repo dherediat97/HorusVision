@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:horusvision/domain/models/paid_seats_entity.dart';
+import 'package:horusvision/domain/model/paid_seats_entity.dart';
 
 class SeatViewWidget extends StatelessWidget {
   const SeatViewWidget({
