@@ -1,63 +1,55 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:horusvision/domain/models/horus_entity.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:horusvision/presentation/features/toolbox/horus_toolbox.dart';
-import 'package:horusvision/presentation/features/view/bloc/horus_view_bloc.dart';
-import 'package:horusvision/presentation/features/view/bloc/horus_view_event.dart';
-import 'package:horusvision/presentation/features/view/bloc/horus_view_state.dart';
 import 'package:horusvision/presentation/features/view/constants/horus_constants.dart';
+import 'package:horusvision/presentation/features/view/widgets/loading_view.dart';
 import 'package:horusvision/presentation/features/view/widgets/seat_view.dart';
+import 'package:horusvision/presentation/features/view/horus_view_controller.dart';
 
-class HorusView extends StatefulWidget {
+class HorusView extends ConsumerStatefulWidget {
   const HorusView({super.key});
 
   @override
-  State<HorusView> createState() => _HorusViewState();
+  ConsumerState<HorusView> createState() => _HorusViewState();
 }
 
-class _HorusViewState extends State<HorusView> {
-  @override
-  void initState() {
-    context.read<HorusViewBloc>().add(const HorusViewEvent.getHorusData());
-    super.initState();
-  }
-
+class _HorusViewState extends ConsumerState<HorusView> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: BlocBuilder<HorusViewBloc, HorusViewState>(
-        builder: (context, state) {
-          HorusEntity? horusData = state.horusEntity;
+    final provider = ref.watch(horusVisionControllerProvider);
 
-          return Column(
-            children: [
-              if (kIsWeb) ...[const HorusToolbox()],
-              SingleChildScrollView(
-                child: SizedBox(
-                  width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height * 0.80,
-                  child: GridView.count(
-                    crossAxisCount: 10,
-                    crossAxisSpacing: 10,
-                    children: List.generate(
-                      horusData!.maxCapacity,
-                      (index) {
-                        if (HorusConstants.emptySpaceCinema.contains(index)) {
-                          return Container();
-                        }
-                        return SeatViewWidget(
-                          index: getLetter(index),
-                          paidSeats: horusData.paidSeats ?? [],
-                        );
-                      },
-                    ),
+    return Scaffold(
+      body: Column(
+        children: [
+          if (kIsWeb) ...[const HorusToolbox()],
+          provider.when(
+            data: (data) => SingleChildScrollView(
+              child: SizedBox(
+                width: MediaQuery.of(context).size.width,
+                height: MediaQuery.of(context).size.height * 0.80,
+                child: GridView.count(
+                  crossAxisCount: 10,
+                  crossAxisSpacing: 10,
+                  children: List.generate(
+                    data.maxCapacity,
+                    (index) {
+                      if (HorusConstants.emptySpaceCinema.contains(index)) {
+                        return Container();
+                      }
+                      return SeatViewWidget(
+                        index: getLetter(index),
+                        paidSeats: data.paidSeats ?? [],
+                      );
+                    },
                   ),
                 ),
               ),
-            ],
-          );
-        },
+            ),
+            error: (error, stackTrace) => Text(error.toString()),
+            loading: () => const LoadingView(),
+          ),
+        ],
       ),
     );
   }
