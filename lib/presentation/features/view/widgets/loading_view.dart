@@ -25,7 +25,8 @@ class _SplashScreen extends State<LoadingView> with TickerProviderStateMixin {
   @override
   void initState() {
     super.initState();
-    _controller = AnimationController(vsync: this);
+    _controller =
+        AnimationController(vsync: this, duration: const Duration(seconds: 10));
   }
 
   @override
@@ -39,9 +40,10 @@ class _SplashScreen extends State<LoadingView> with TickerProviderStateMixin {
         onLoaded: (composition) {
           _controller
             ..duration = composition.duration
-            ..reverse()
             ..forward().whenComplete(
-              () => context.go(AppRoutePaths.homeRoute),
+              () {
+                context.go(AppRoutePaths.homeRoute);
+              },
             );
         },
       ),
