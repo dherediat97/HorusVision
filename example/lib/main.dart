@@ -1,17 +1,18 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:horusvision/presentation/features/horusvision.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  runApp(MyApp());
+  runApp(ProviderScope(child: MyApp()));
 }
 
 List<GoRoute> appRoutes = [
   GoRoute(
     path: '/',
-    builder: (context, state) => const MyHomePage(title: 'Demo Horus Vision'),
+    builder: (context, state) => const MyHomePage(),
     routes: const [],
   ),
 ];
@@ -42,17 +43,12 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatelessWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
+  const MyHomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.onPrimaryContainer,
-      appBar: AppBar(
-        title: Text(title),
-      ),
       body: const HorusVision(),
     );
   }

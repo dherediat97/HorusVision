@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:horusvision/domain/model/paid_seats_entity.dart';
 
 class SeatViewWidget extends StatelessWidget {
@@ -17,11 +18,14 @@ class SeatViewWidget extends StatelessWidget {
       color: paidSeats.map((e) => e.seatId).contains(index)
           ? Colors.red
           : Colors.white,
-      child: Center(
-        child: Text(
-          index.substring(0, index.length),
-          style: TextStyle(
-            fontSize: MediaQuery.of(context).textScaler.scale(10),
+      child: InkWell(
+        onTap: () => context.push('/mySeat'),
+        child: Center(
+          child: Text(
+            index.substring(0, index.length),
+            style: TextStyle(
+              fontSize: MediaQuery.of(context).textScaler.scale(10),
+            ),
           ),
         ),
       ),

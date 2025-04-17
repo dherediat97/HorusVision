@@ -1,11 +1,11 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:horusvision/infra/repository/horus_repository_impl.dart';
 import 'package:horusvision/presentation/features/toolbox/horus_toolbox.dart';
 import 'package:horusvision/presentation/features/view/constants/horus_constants.dart';
 import 'package:horusvision/presentation/features/view/widgets/loading_view.dart';
 import 'package:horusvision/presentation/features/view/widgets/seat_view.dart';
-import 'package:horusvision/presentation/features/view/horus_view_controller.dart';
 
 class HorusView extends ConsumerStatefulWidget {
   const HorusView({super.key});
@@ -17,8 +17,7 @@ class HorusView extends ConsumerStatefulWidget {
 class _HorusViewState extends ConsumerState<HorusView> {
   @override
   Widget build(BuildContext context) {
-    final provider = ref.watch(horusVisionControllerProvider);
-
+    final provider = ref.watch(horusEntityProvider);
     return Scaffold(
       body: Column(
         children: [

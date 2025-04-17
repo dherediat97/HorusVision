@@ -10,7 +10,12 @@ dependencies:
     sdk: flutter
 
   go_router: ^14.2.0
-  horusvision: ^0.0.5
+  flutter_riverpod: ^2.6.1
+  riverpod_annotation: ^2.6.1
+  horusvision:
+    path: ../
+  horus_vision_engine:
+    path: ../../horusvisionengine/
 
 dev_dependencies:
   flutter_test:
@@ -22,3 +27,4 @@ flutter:
   uses-material-design: true
   assets: 
     - assets/
+    - assets/immersive_film.glb

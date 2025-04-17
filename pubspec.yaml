@@ -1,6 +1,7 @@
 name: horusvision
 description: "The new era for show views, with that package you can show to your users any place of concert or airplane plane"
 version: 1.0.0
+publish_to: 'none'
 package:
     git: https://github.com/dherediat97/HorusVision
     ref: main
@@ -13,6 +14,8 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_localizations:
+    sdk: flutter  
+  flutter_web_plugins:
     sdk: flutter
 
   go_router: ^14.2.0
@@ -33,18 +36,16 @@ dependencies:
   # Annotations to help freezed generate remote data-models classes
   # https://pub.dev/packages/json_annotation
   json_annotation: ^4.9.0
-
   dio: ^5.0.0
-
   retrofit: ^4.1.0
-  
   intl: ^0.19.0
-  get_it: ^7.2.0
   lottie: ^3.1.2
   flutter_riverpod: ^2.6.1
   riverpod_annotation: ^2.6.1
   shared_preferences: ^2.3.2
-  pretty_dio_logger: ^1.4.0
+  model_viewer_plus: ^1.8.0
+  horus_vision_engine:
+    path: ../horusvisionengine/
 
 dev_dependencies:
   flutter_test:
@@ -59,20 +60,14 @@ dev_dependencies:
   # A mock framework inspired by Mockito
   # https://pub.dev/packages/mockito
   mockito: ^5.4.4
-
-  # Utility Test library for Bloc 
-  #
-  # For test all of bloc lifecycle
-  # https://pub.dev/packages/bloc_test
-  bloc_test: ^9.1.7
   riverpod_generator: ^2.6.3
   custom_lint: ^0.7.0
   riverpod_lint: ^2.6.3
 
 flutter:
   generate: true
-  assets: 
-    - lib/assets/
+  assets:
+    - assets/
 
 
 flutter_intl:

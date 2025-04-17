@@ -5,6 +5,7 @@ import 'package:go_router/go_router.dart';
 import 'package:horusvision/app/routes/app_paths.dart';
 import 'package:horusvision/presentation/features/view/horus_view.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
+import 'package:horus_vision_engine/main.dart';
 
 part 'app_router.g.dart';
 
@@ -20,7 +21,12 @@ GoRouter goRouter(Ref ref) {
         GoRoute(
           path: '/',
           builder: (context, state) => const HorusView(),
-          routes: const [],
+        ),
+        GoRoute(
+          path: '/mySeat',
+          builder: (context, state) => const ImmersiveView(
+            modelSrc: 'assets/immersive_film.glb',
+          ),
         ),
       ]);
 }
